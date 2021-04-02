@@ -3,4 +3,6 @@ Rails.application.routes.draw do
   root 'home#index'
 
   resources :messages, only: [:new, :create]
+
+  mount ActionCable.server => '/cable'
 end
