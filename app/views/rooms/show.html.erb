@@ -1,0 +1,13 @@
+<div id="chat-room" data-room-id="<%=@room.id%>">
+  <h1>Chat App</h1>
+  <div class="messages">
+  <% @messages.each do |message| %>
+      <div class="message"><%= message.content %></div>
+  <% end %>
+  </div>
+  <br />
+  <%= form_with(model: [@room, @message], local: false, class: 'chat-form') do |form| %>
+  <%= form.text_field :content, class: 'chat-input' %>
+  <%= form.submit :send %>
+  <% end %>
+</div>
