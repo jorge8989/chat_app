@@ -12,7 +12,7 @@ const initConsumer = function(channel, roomId) {
   
     received(data) {
       // Called when there's incoming data on the websocket for this channel
-      $('.messages').append('<div class="message">' + data.content + '</div>')
+      $('.messages').append('<div class="message"><strong>' + data.content.user + '</strong>: ' + data.content.message + '</div>')
     }
   });
 }

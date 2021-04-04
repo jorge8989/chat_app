@@ -2,7 +2,7 @@
   <h1>Chat App</h1>
   <div class="messages">
   <% @messages.each do |message| %>
-      <div class="message"><%= message.content %></div>
+      <div class="message"><strong><%= message.user.email %>:</strong> <%= message.content %></div>
   <% end %>
   </div>
   <br />
